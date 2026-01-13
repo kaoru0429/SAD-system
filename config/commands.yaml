@@ -1,0 +1,135 @@
+# 指令定義配置
+
+commands:
+  # 數據分析
+  analyze-data:
+    description: 對數據進行詳細分析
+    category: 數據分析
+    risk_level: low
+    parameters:
+      type:
+        description: 分析類型
+        required: false
+        default: summary
+        choices: [summary, detailed, statistical, trend]
+      format:
+        description: 輸出格式
+        required: false
+        default: markdown
+        choices: [markdown, json, html, csv]
+    input_types: [file, data, url]
+    
+  # 文件摘要
+  summarize-doc:
+    description: 生成文件摘要
+    category: 文件操作
+    risk_level: low
+    parameters:
+      length:
+        description: 摘要長度
+        required: false
+        default: medium
+        choices: [brief, medium, detailed]
+      format:
+        description: 輸出格式
+        required: false
+        default: markdown
+    input_types: [file, url, text]
+    
+  # 檔案轉換
+  convert-file:
+    description: 轉換檔案格式
+    category: 文件操作
+    risk_level: low
+    parameters:
+      to:
+        description: 目標格式
+        required: true
+        choices: [json, csv, xml, yaml, markdown, html, pdf]
+      encoding:
+        description: 編碼
+        required: false
+        default: utf-8
+    input_types: [file]
+    
+  # 網站生成
+  generate-site:
+    description: 生成靜態網站
+    category: 網頁部署
+    risk_level: medium
+    parameters:
+      template:
+        description: 網站模板
+        required: false
+        default: default
+      style:
+        description: 樣式主題
+        required: false
+        default: modern
+    input_types: [file, data]
+    
+  # 部署 (高風險)
+  deploy-site:
+    description: 部署網站到生產環境
+    category: 網頁部署
+    risk_level: high
+    requires_confirmation: true
+    parameters:
+      target:
+        description: 部署目標
+        required: true
+        choices: [staging, production]
+      backup:
+        description: 是否備份
+        required: false
+        default: true
+    input_types: [site]
+    
+  # 刪除 (高風險)
+  delete-file:
+    description: 刪除檔案或資源
+    category: 系統操作
+    risk_level: critical
+    requires_confirmation: true
+    parameters:
+      force:
+        description: 強制刪除
+        required: false
+        default: false
+      backup:
+        description: 刪除前備份
+        required: false
+        default: true
+    input_types: [file, data, resource]
+    
+  # 列表
+  list-files:
+    description: 列出檔案或資源
+    category: 系統操作
+    risk_level: low
+    parameters:
+      filter:
+        description: 過濾條件
+        required: false
+      sort:
+        description: 排序方式
+        required: false
+        default: name
+        choices: [name, date, size, type]
+    input_types: [directory, workspace]
+    
+  # 搜尋
+  search-content:
+    description: 搜尋內容
+    category: 數據分析
+    risk_level: low
+    parameters:
+      query:
+        description: 搜尋關鍵字
+        required: true
+      scope:
+        description: 搜尋範圍
+        required: false
+        default: all
+        choices: [all, files, data, history]
+    input_types: [workspace, directory]

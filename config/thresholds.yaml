@@ -1,0 +1,54 @@
+# 閾值配置
+
+# 映射閾值
+mapping:
+  # 直接映射閾值 (權重 >= 此值則直接執行)
+  direct_threshold: 90
+  
+  # 拒絕閾值 (權重 < 此值則拒絕並要求澄清)
+  reject_threshold: 30
+  
+  # S.A.B.E. 觸發範圍: reject_threshold <= weight < direct_threshold
+
+# S.A.B.E. 協議閾值
+sabe:
+  # 大型任務 Token 閾值
+  large_task_tokens: 50000
+  
+  # 大型任務步驟閾值
+  large_task_steps: 5
+  
+  # 建議數量上限
+  max_suggestions: 5
+  
+  # 自動恢復嘗試次數
+  auto_recovery_attempts: 3
+
+# 高風險操作
+high_risk_commands:
+  - deploy
+  - delete
+  - overwrite
+  - destroy
+  - remove
+  - publish
+  - release
+
+# 會話管理
+session:
+  # 會話超時 (秒)
+  timeout: 3600
+  
+  # 最大歷史記錄數
+  max_history: 100
+  
+  # 狀態保存間隔 (秒)
+  state_save_interval: 60
+
+# 輸出追蹤
+output:
+  # 最大輸出歷史數
+  max_outputs: 50
+  
+  # 輸出過期時間 (秒)
+  expiry: 86400

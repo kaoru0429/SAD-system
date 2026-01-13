@@ -1,0 +1,87 @@
+# 同義詞配置檔
+
+# 數據分析類
+analyze-data:
+  primary: analyze
+  synonyms:
+    analyze: 100
+    inspect: 95
+    examine: 92
+    investigate: 90
+    review: 85
+    check: 80
+    study: 78
+    evaluate: 75
+
+# 文件摘要類
+summarize-doc:
+  primary: summarize
+  synonyms:
+    summarize: 100
+    digest: 95
+    condense: 92
+    brief: 90
+    abstract: 88
+    outline: 85
+    recap: 82
+
+# 檔案轉換類
+convert-file:
+  primary: convert
+  synonyms:
+    convert: 100
+    transform: 95
+    change: 88
+    translate: 85
+    switch: 80
+    modify: 75
+
+# 網站生成類
+generate-site:
+  primary: generate
+  synonyms:
+    generate: 100
+    create: 98
+    build: 95
+    make: 90
+    produce: 85
+    construct: 82
+
+# 部署類 (高風險)
+deploy-site:
+  primary: deploy
+  synonyms:
+    deploy: 100
+    publish: 95
+    release: 92
+    launch: 90
+  risk_level: high
+
+# 刪除類 (高風險)
+delete-file:
+  primary: delete
+  synonyms:
+    delete: 100
+    remove: 95
+    erase: 92
+    destroy: 90
+  risk_level: critical
+
+# 列表類
+list-files:
+  primary: list
+  synonyms:
+    list: 100
+    show: 95
+    display: 92
+    enumerate: 88
+
+# 搜尋類
+search-content:
+  primary: search
+  synonyms:
+    search: 100
+    find: 98
+    locate: 95
+    lookup: 92
+    query: 88
