@@ -1,16 +1,16 @@
 [project]
 name = "sad-system"
-version = "0.1.0"
-description = "SLASH@DASH Smart Command System - 萬用 LLM 對話指令集"
+version = "1.0.0"
+description = "SLASH@DASH Smart Command System - Universal LLM Command Interface with S.A.B.E. Protocol and Five Prompt Hacks | 萬用 LLM 對話指令集"
 readme = "README.md"
 requires-python = ">=3.11"
 license = {text = "MIT"}
 authors = [
     {name = "Yusei", email = "yusei@example.com"}
 ]
-keywords = ["llm", "command", "parser", "ai", "chatbot"]
+keywords = ["llm", "command", "parser", "ai", "chatbot", "prompt", "sabe", "undo"]
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3.11",

@@ -180,17 +180,44 @@ flowchart TD
 
 ---
 
-## 六、未來擴展
+## 六、擴展功能 | Extended Features
 
-### 計畫中功能
+### 6.1 五言絕句 | Five Prompt Hacks ⭐ NEW
 
-- [ ] `/list-outputs` - 歷史輸出索引
-- [ ] `/retrieve-output` - 輸出檢索
-- [ ] `/share-link` - 分享連結生成
-- [ ] `/share-workspace` - 團隊協作
-- [ ] `/version-control` - 版本控制
+在任務進度里程碑自動注入品質提升附言：
 
-### 插件系統
+| 進度 | Hack | 附言效果 |
+|------|------|---------|
+| 20% | 🎯 Clarify | 先問澄清問題 |
+| 40% | 🌐 Web-backed | 搜尋最新資訊 |
+| 60% | 📊 Self-grade | 自評迭代至 9/10 |
+| 80% | 👥 3-Expert Panel | 三專家觀點 |
+| ~100% | 😈 Devil's Advocate | 自我批判 |
+
+詳見 [五言絕句文件](FIVE_HACKS.md)
+
+### 6.2 恢復上一動 | Undo System ⭐ NEW
+
+| 指令 | 功能 |
+|------|------|
+| `/undo` | 恢復上一操作 |
+| `/undo --steps 3` | 恢復前 N 步 |
+| `/redo` | 重做被撤銷操作 |
+| `/history` | 顯示可恢復歷史 |
+
+---
+
+## 七、未來擴展 | Future Roadmap
+
+### 計畫中功能 | Planned Features
+
+- [ ] `/list-outputs` - 歷史輸出索引 | Output history index
+- [ ] `/retrieve-output` - 輸出檢索 | Output retrieval
+- [ ] `/share-link` - 分享連結生成 | Share link generation
+- [ ] `/share-workspace` - 團隊協作 | Team collaboration
+- [ ] `/version-control` - 版本控制 | Version control
+
+### 插件系統 | Plugin System
 
 系統設計支援插件擴展，允許第三方開發者註冊新指令：
 
@@ -206,3 +233,8 @@ def custom_analysis(input_obj, **params):
     # 自定義邏輯
     pass
 ```
+
+---
+
+*SAD System - 用法嚴格，用字寬容 | Strict Syntax, Lenient Vocabulary*
+

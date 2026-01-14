@@ -1,0 +1,108 @@
+# Five Prompt Hacks Configuration | 五言絕句配置
+# Auto-injected at progress milestones | 在進度里程碑自動注入
+
+hacks:
+  # Hack 1: Clarify | 先澄清
+  clarify:
+    id: "clarify"
+    name_zh: "先澄清"
+    name_en: "Clarify"
+    emoji: "🎯"
+    milestone: 20
+    enabled: true
+    postscript: |
+      Ask me clarifying questions until you are 95% confident you 
+      understand what I want before generating the final output.
+    use_when:
+      - "Task has hidden preferences (tone, audience, constraints)"
+      - "Wrong assumptions would waste time"
+
+  # Hack 2: Web-backed | 網路查證
+  web_backed:
+    id: "web_backed"
+    name_zh: "網路查證"
+    name_en: "Web-backed"
+    emoji: "🌐"
+    milestone: 40
+    enabled: true
+    postscript: |
+      Before answering, search the web for the most recent and 
+      credible information. Include sources and a timestamp.
+    use_when:
+      - "Time-sensitive data (pricing, laws, product features)"
+      - "You want receipts, not vibes"
+    fallback: |
+      If you cannot browse, tell me exactly what you would search for, 
+      which sources you would trust most, and what might be outdated.
+
+  # Hack 3: Self-grade | 自我評分
+  self_grade:
+    id: "self_grade"
+    name_zh: "自我評分"
+    name_en: "Self-grade"
+    emoji: "📊"
+    milestone: 60
+    enabled: true
+    postscript: |
+      Before answering, evaluate your answer for accuracy, completeness, 
+      usefulness, and clarity until it is at least 9 out of 10 in each category.
+    use_when:
+      - "Need polished deliverable (strategy, pitch, SOP)"
+      - "Hate re-prompting for obvious fixes"
+
+  # Hack 4: 3-Expert Panel | 三專家觀點
+  expert_panel:
+    id: "expert_panel"
+    name_zh: "三專家觀點"
+    name_en: "3-Expert Panel"
+    emoji: "👥"
+    milestone: 80
+    enabled: false  # Disabled by default, heavier weight
+    postscript: |
+      Answer using a 3-expert panel: a practitioner, a skeptic, and an editor. 
+      Show where they disagree, then synthesize one final answer with the best tradeoffs.
+    use_when:
+      - "Making decisions and want tradeoffs"
+      - "Want fewer blind spots"
+
+  # Hack 5: Devil's Advocate | 自我批判
+  devils_advocate:
+    id: "devils_advocate"
+    name_zh: "自我批判"
+    name_en: "Devil's Advocate"
+    emoji: "😈"
+    milestone: 100
+    enabled: true
+    postscript: |
+      After generating your answer, provide a critique of your own response 
+      from the perspective of a skeptic. Highlight potential biases, 
+      missing angles, or logical gaps.
+    use_when:
+      - "Brainstorming, decision-making, sanity-checking"
+      - "Want to catch weak logic before acting"
+    enhanced: |
+      Assume my plan fails. List the top 10 reasons and how to mitigate each.
+
+# UI Settings | UI 設定
+ui:
+  # Progress indicator style | 進度指示器樣式
+  indicator:
+    completed: "●"
+    pending: "○"
+    
+  # Injection effect | 注入效果
+  effect:
+    animation: "fade_in"
+    duration_ms: 300
+    highlight: true
+
+# Integration | 整合設定
+integration:
+  # Auto-inject on milestone reach | 到達里程碑時自動注入
+  auto_inject: true
+  
+  # Show notification when injecting | 注入時顯示通知
+  notify_on_inject: true
+  
+  # Allow user to skip hack | 允許用戶跳過
+  allow_skip: true
